@@ -14,20 +14,20 @@ export const PrizeModal = ({ prize, onClose }: PrizeModalProps) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-      <div className="bg-card border-2 border-primary rounded-2xl casino-shadow max-w-md w-full animate-bounce-in">
+    <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+      <div className="bg-card border-2 border-primary rounded-2xl casino-shadow max-w-sm w-full max-h-[90vh] overflow-y-auto animate-bounce-in">
         {/* Header */}
-        <div className="text-center p-8 bg-gradient-neon rounded-t-2xl">
-          <div className="text-6xl mb-4">{prize.emoji}</div>
-          <h2 className="text-3xl font-black text-background mb-2">Congratulations! 🎉</h2>
-          <p className="text-xl font-bold text-background">You won {prize.name}!</p>
+        <div className="text-center p-6 bg-gradient-neon rounded-t-2xl">
+          <div className="text-4xl mb-3">{prize.emoji}</div>
+          <h2 className="text-2xl font-black text-background mb-2">Congratulations! 🎉</h2>
+          <p className="text-lg font-bold text-background">You won {prize.name}!</p>
         </div>
 
         {/* Content */}
-        <div className="p-6 space-y-6">
+        <div className="p-4 space-y-4">
           {/* Step Instructions */}
-          <div className="space-y-4">
-            <h3 className="text-xl font-bold text-primary neon-glow text-center">Claim Your Prize:</h3>
+          <div className="space-y-3">
+            <h3 className="text-lg font-bold text-primary text-center">Claim Your Prize:</h3>
             
             {/* Step 1 */}
             <div className="bg-muted/20 rounded-lg p-4 neon-border">
