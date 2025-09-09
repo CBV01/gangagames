@@ -129,9 +129,16 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    /* Prevent white flash behind body during scroll */
+    background-color: hsl(var(--background));
+  }
+
   body {
     @apply bg-background text-foreground;
-    background: var(--gradient-casino);
+    /* Fix gradient to viewport to avoid repaint gaps on scroll */
+    background: var(--gradient-casino) fixed;
+    background-attachment: fixed;
     min-height: 100vh;
     font-family: 'Poppins', sans-serif;
   }
@@ -216,6 +223,10 @@ All colors MUST be HSL.
 
 @layer components {
   /* Keyframes */
+  @keyframes marquee-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
   @keyframes spin-casino {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(1440deg); } /* 4 full rotations */
@@ -262,5 +273,10 @@ All colors MUST be HSL.
 
   .animate-bounce-in {
     animation: bounce-in 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  }
+
+  .marquee {
+    width: max-content;
+    animation: marquee-scroll 32s linear infinite;
   }
 }

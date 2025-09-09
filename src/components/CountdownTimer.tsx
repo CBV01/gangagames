@@ -39,42 +39,42 @@ export const CountdownTimer = () => {
 
   return (
     <div className="flex flex-col items-center mt-8 mb-4">
-      <p className="text-casino-red font-bold text-lg mb-4 neon-glow animate-pulse">
-        ⚡ Offer expires in:
+      <p className="text-accent gold-glow title-font font-bold text-lg mb-4">
+        ⚡ Offer ends soon
       </p>
-      
-      <div className="flex items-center space-x-4 bg-card/20 backdrop-blur-sm rounded-2xl p-6 neon-border casino-shadow">
+
+      <div className="flex items-center gap-4 bg-card/30 backdrop-blur-md rounded-2xl p-4 md:p-6 luxury-border luxury-shadow">
         {/* Hours */}
         <div className="text-center">
-          <div className="bg-gradient-neon text-background rounded-lg p-3 min-w-16">
-            <div className="text-3xl font-black">{formatNumber(timeLeft.hours)}</div>
+          <div className="bg-gradient-neon text-foreground rounded-lg px-4 py-3 min-w-16 md:min-w-20">
+            <div className="text-2xl md:text-4xl font-black tracking-widest">{formatNumber(timeLeft.hours)}</div>
           </div>
-          <div className="text-xs font-semibold text-muted-foreground mt-2">HOURS</div>
+          <div className="text-[10px] md:text-xs font-semibold text-muted-foreground mt-2 tracking-[0.2em]">HOURS</div>
         </div>
-        
-        <div className="text-2xl text-primary font-bold animate-pulse">:</div>
-        
+
+        <div className="text-2xl md:text-3xl text-primary font-extrabold animate-pulse">:</div>
+
         {/* Minutes */}
         <div className="text-center">
-          <div className="bg-gradient-neon text-background rounded-lg p-3 min-w-16">
-            <div className="text-3xl font-black">{formatNumber(timeLeft.minutes)}</div>
+          <div className="bg-gradient-neon text-foreground rounded-lg px-4 py-3 min-w-16 md:min-w-20">
+            <div className="text-2xl md:text-4xl font-black tracking-widest">{formatNumber(timeLeft.minutes)}</div>
           </div>
-          <div className="text-xs font-semibold text-muted-foreground mt-2">MINUTES</div>
+          <div className="text-[10px] md:text-xs font-semibold text-muted-foreground mt-2 tracking-[0.2em]">MINUTES</div>
         </div>
-        
-        <div className="text-2xl text-primary font-bold animate-pulse">:</div>
-        
+
+        <div className="text-2xl md:text-3xl text-primary font-extrabold animate-pulse">:</div>
+
         {/* Seconds */}
         <div className="text-center">
-          <div className="bg-gradient-neon text-background rounded-lg p-3 min-w-16">
-            <div className="text-3xl font-black">{formatNumber(timeLeft.seconds)}</div>
+          <div className="bg-gradient-neon text-foreground rounded-lg px-4 py-3 min-w-16 md:min-w-20">
+            <div className="text-2xl md:text-4xl font-black tracking-widest">{formatNumber(timeLeft.seconds)}</div>
           </div>
-          <div className="text-xs font-semibold text-muted-foreground mt-2">SECONDS</div>
+          <div className="text-[10px] md:text-xs font-semibold text-muted-foreground mt-2 tracking-[0.2em]">SECONDS</div>
         </div>
       </div>
-      
-      <p className="text-accent font-semibold text-sm mt-4 pulse-glow">
-        🔥 Don't miss out – Limited time only!
+
+      <p className="text-foreground/90 font-semibold text-sm md:text-base mt-4">
+        🔥 Spin now for a chance to win big!
       </p>
     </div>
   );

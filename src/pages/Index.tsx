@@ -1,11 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Header } from "@/components/Header";
 import { SpinWheel } from "@/components/SpinWheel";
 import { PrizeModal } from "@/components/PrizeModal";
-import { ReferralTracker } from "@/components/ReferralTracker";
-import { LiveNotifications } from "@/components/LiveNotifications";
 import { CountdownTimer } from "@/components/CountdownTimer";
 import { Confetti } from "@/components/Confetti";
+import { TopWinnersTicker } from "@/components/TopWinnersTicker";
 import { CasinoIcons } from "@/components/CasinoIcons";
 import { WinnersLeaderboard } from "@/components/WinnersLeaderboard";
 
@@ -31,6 +30,7 @@ const Index = () => {
   const [wonPrize, setWonPrize] = useState<Prize | null>(null);
   const [showConfetti, setShowConfetti] = useState(false);
   const [hasSpun, setHasSpun] = useState(false);
+  const [refCode, setRefCode] = useState<string | null>(null);
 
   const handlePrizeWon = (prize: Prize) => {
     setWonPrize(prize);
@@ -44,6 +44,13 @@ const Index = () => {
   const handleCloseModal = () => {
     setWonPrize(null);
   };
+
+  // Read referral code from URL
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const r = params.get('ref');
+    if (r) setRefCode(r);
+  }, []);
 
   return (
     <div className="min-h-screen relative overflow-hidden">
@@ -61,12 +68,22 @@ const Index = () => {
       {/* Content */}
       <div className="relative z-10">
         <Header />
+        {refCode && (
+          <div className="bg-muted/20 border border-border/50 text-foreground text-sm py-2">
+            <div className="container mx-auto px-4 text-center">
+              Referred code: <span className="font-semibold text-accent">{refCode}</span> — Spin now and sign up to activate your prize!
+            </div>
+          </div>
+        )}
+        <TopWinnersTicker />
         
         <main className="container mx-auto px-4 py-8">
           {/* Hero Section */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-6xl title-font mb-4 text-accent gold-glow">
-              Spin & Win up to ₹10,000 instantly 🎰
+              Spin & Win up to ₹10,000
+              <br />
+              instantly 🎰
             </h1>
             <p className="text-xl md:text-2xl text-foreground font-semibold">
               Play for free – No risk, just rewards!
@@ -87,12 +104,7 @@ const Index = () => {
               <SpinWheel prizes={prizes} onPrizeWon={handlePrizeWon} />
             </div>
             
-            {/* Right Sidebar - Referral (appears after spin) */}
-            {hasSpun && (
-              <div className="flex-shrink-0 w-80 animate-float-up">
-                <ReferralTracker />
-              </div>
-            )}
+            {/* Right Sidebar - Referral removed; now shown via modal actions */}
           </div>
 
           {/* Footer */}
@@ -111,7 +123,6 @@ const Index = () => {
         </main>
 
         {/* Fixed Position Components */}
-        <LiveNotifications />
         
         {/* Confetti Effect */}
         {showConfetti && <Confetti />}
