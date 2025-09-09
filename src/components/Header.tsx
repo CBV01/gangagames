@@ -2,14 +2,15 @@ export const Header = () => {
   return (
     <header className="container mx-auto px-4 py-6">
       <div className="flex items-center justify-between">
-        {/* Logo */}
+        {/* Gangagames Logo */}
         <div className="flex items-center space-x-4">
-          <div className="w-12 h-12 rounded-full bg-gradient-neon flex items-center justify-center casino-glow">
-            <span className="text-2xl font-black text-background">🎰</span>
+          <div className="w-14 h-14 rounded-full bg-gradient-gold flex items-center justify-center luxury-shadow relative">
+            <span className="text-2xl">🎰</span>
+            <div className="absolute inset-0 rounded-full luxury-border"></div>
           </div>
           <div className="hidden md:block">
-            <h2 className="text-2xl font-black text-accent neon-glow">CasinoWin</h2>
-            <p className="text-xs text-muted-foreground">Spin & Win Platform</p>
+            <h2 className="text-3xl title-font text-accent gold-glow">Gangagames</h2>
+            <p className="text-xs text-muted-foreground font-medium">Premium Gaming Platform</p>
           </div>
         </div>
 

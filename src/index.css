@@ -2,66 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Casino/Gaming Design System - All colors, gradients, fonts, etc defined here. 
+/* Gangagames Casino Design System - Luxurious & Professional
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    /* Casino Dark Theme */
-    --background: 0 0% 8%;
+    /* Gangagames Dark Luxury Theme */
+    --background: 0 0% 0%;  /* Pure black base */
     --foreground: 0 0% 95%;
 
-    --card: 0 0% 12%;
+    --card: 280 100% 2%;  /* Deep purple-black */
     --card-foreground: 0 0% 95%;
 
-    --popover: 0 0% 10%;
+    --popover: 280 100% 2%;
     --popover-foreground: 0 0% 95%;
 
-    /* Casino Brand Colors */
-    --primary: 330 85% 55%;  /* Neon Pink */
+    /* Gangagames Brand Colors */
+    --primary: 351 79% 37%;  /* Royal Red #C41E3A */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 280 90% 65%;  /* Neon Purple */
+    --secondary: 280 100% 12%;  /* Deep Purple #2B0040 */
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 20%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70%;
 
-    --accent: 45 100% 60%;  /* Neon Gold */
-    --accent-foreground: 0 0% 10%;
+    --accent: 51 100% 50%;  /* Luxury Gold #FFD700 */
+    --accent-foreground: 0 0% 0%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 25%;
-    --input: 0 0% 15%;
-    --ring: 330 85% 55%;
+    --border: 0 0% 20%;
+    --input: 0 0% 8%;
+    --ring: 51 100% 50%;
 
-    /* Casino Specific Colors */
-    --casino-red: 0 85% 45%;
-    --casino-green: 120 70% 45%;
-    --casino-blue: 220 85% 60%;
-    --casino-orange: 25 95% 60%;
+    /* Casino Luxury Colors */
+    --casino-red: 351 79% 37%;  /* Royal Red */
+    --casino-green: 151 83% 23%;  /* Emerald Green #0F9D58 */
+    --casino-gold: 51 100% 50%;  /* Pure Gold */
+    --casino-purple: 280 100% 12%;  /* Deep Purple */
+    --casino-black: 0 0% 0%;  /* Pure Black */
     
-    /* Gradients */
-    --gradient-casino: linear-gradient(135deg, hsl(var(--casino-red)) 0%, hsl(0 0% 8%) 50%, hsl(280 90% 25%) 100%);
-    --gradient-neon: linear-gradient(90deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 50%, hsl(var(--accent)) 100%);
+    /* Luxury Gradients */
+    --gradient-casino: linear-gradient(135deg, hsl(0 0% 0%) 0%, hsl(280 100% 2%) 30%, hsl(280 100% 8%) 70%, hsl(351 79% 10%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(51 100% 50%) 0%, hsl(45 100% 45%) 50%, hsl(51 100% 60%) 100%);
+    --gradient-royal: linear-gradient(135deg, hsl(351 79% 37%) 0%, hsl(280 100% 12%) 100%);
     --gradient-wheel: conic-gradient(
-      hsl(var(--primary)) 0deg 45deg,
-      hsl(var(--accent)) 45deg 90deg,
-      hsl(var(--casino-red)) 90deg 135deg,
-      hsl(var(--casino-green)) 135deg 180deg,
-      hsl(var(--casino-blue)) 180deg 225deg,
-      hsl(var(--casino-orange)) 225deg 270deg,
-      hsl(var(--secondary)) 270deg 315deg,
-      hsl(330 85% 65%) 315deg 360deg
+      hsl(var(--casino-red)) 0deg 45deg,
+      hsl(var(--casino-gold)) 45deg 90deg,
+      hsl(var(--casino-green)) 90deg 135deg,
+      hsl(var(--casino-purple)) 135deg 180deg,
+      hsl(var(--casino-red)) 180deg 225deg,
+      hsl(var(--casino-gold)) 225deg 270deg,
+      hsl(var(--casino-green)) 270deg 315deg,
+      hsl(var(--casino-purple)) 315deg 360deg
     );
 
-    /* Shadows & Glows */
-    --shadow-neon: 0 0 20px hsl(var(--primary) / 0.5);
-    --shadow-gold: 0 0 30px hsl(var(--accent) / 0.6);
-    --shadow-casino: 0 10px 40px hsl(0 0% 0% / 0.8);
+    /* Luxury Shadows & Glows */
+    --shadow-gold: 0 0 30px hsl(51 100% 50% / 0.8);
+    --shadow-red: 0 0 25px hsl(351 79% 37% / 0.6);
+    --shadow-green: 0 0 20px hsl(151 83% 23% / 0.5);
+    --shadow-casino: 0 15px 50px hsl(0 0% 0% / 0.9);
 
     --radius: 0.75rem;
 
@@ -130,29 +133,34 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
     background: var(--gradient-casino);
     min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
   }
 }
 
 @layer utilities {
-  /* Casino Neon Effects */
-  .neon-glow {
-    text-shadow: 0 0 2px currentColor, 0 0 4px currentColor;
+  /* Gangagames Luxury Effects */
+  .gold-glow {
+    text-shadow: 0 0 8px hsl(51 100% 50% / 0.8), 0 0 16px hsl(51 100% 50% / 0.6);
   }
   
-  .neon-border {
-    box-shadow: 0 0 10px hsl(var(--primary) / 0.5), inset 0 0 10px hsl(var(--primary) / 0.2);
-    border: 1px solid hsl(var(--primary));
+  .luxury-border {
+    box-shadow: 0 0 15px hsl(var(--accent) / 0.6), inset 0 0 10px hsl(var(--accent) / 0.3);
+    border: 2px solid hsl(var(--accent));
   }
 
   .casino-glow {
-    box-shadow: var(--shadow-neon);
-  }
-
-  .gold-glow {
     box-shadow: var(--shadow-gold);
   }
 
-  .casino-shadow {
+  .red-glow {
+    box-shadow: var(--shadow-red);
+  }
+
+  .green-glow {
+    box-shadow: var(--shadow-green);
+  }
+
+  .luxury-shadow {
     box-shadow: var(--shadow-casino);
   }
 
@@ -166,30 +174,43 @@ All colors MUST be HSL.
     animation: pulse-neon 2s ease-in-out infinite alternate;
   }
 
-  /* Gradient Backgrounds */
+  /* Luxury Gradient Backgrounds */
   .bg-gradient-casino {
     background: var(--gradient-casino);
   }
 
-  .bg-gradient-neon {
-    background: var(--gradient-neon);
+  .bg-gradient-gold {
+    background: var(--gradient-gold);
+  }
+
+  .bg-gradient-royal {
+    background: var(--gradient-royal);
   }
 
   .bg-gradient-wheel {
     background: var(--gradient-wheel);
   }
 
-  /* Button Hover Effects */
+  /* Gangagames Luxury Buttons */
   .btn-casino {
     @apply bg-primary text-primary-foreground px-8 py-4 rounded-full font-bold text-lg;
     @apply transition-all duration-300 transform hover:scale-105;
-    @apply casino-glow hover:shadow-[0_0_30px_hsl(var(--primary)/0.8)];
+    @apply red-glow hover:shadow-[0_0_40px_hsl(var(--primary)/0.9)];
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
   }
 
   .btn-gold {
     @apply bg-accent text-accent-foreground px-8 py-4 rounded-full font-bold text-lg;
     @apply transition-all duration-300 transform hover:scale-105;
-    @apply gold-glow hover:shadow-[0_0_30px_hsl(var(--accent)/0.8)];
+    @apply casino-glow hover:shadow-[0_0_40px_hsl(var(--accent)/0.9)];
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+  }
+  
+  .title-font {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
   }
 }
 

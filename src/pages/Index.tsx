@@ -6,6 +6,8 @@ import { ReferralTracker } from "@/components/ReferralTracker";
 import { LiveNotifications } from "@/components/LiveNotifications";
 import { CountdownTimer } from "@/components/CountdownTimer";
 import { Confetti } from "@/components/Confetti";
+import { CasinoIcons } from "@/components/CasinoIcons";
+import { WinnersLeaderboard } from "@/components/WinnersLeaderboard";
 
 export interface Prize {
   id: string;
@@ -45,12 +47,15 @@ const Index = () => {
 
   return (
     <div className="min-h-screen relative overflow-hidden">
+      {/* Floating Casino Icons */}
+      <CasinoIcons />
+      
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-casino"></div>
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-20 w-96 h-96 rounded-full bg-primary/20 blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-80 h-80 rounded-full bg-accent/20 blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-secondary/10 blur-2xl animate-pulse delay-500"></div>
+        <div className="absolute top-20 left-20 w-96 h-96 rounded-full bg-accent/30 blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-80 h-80 rounded-full bg-primary/20 blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-secondary/15 blur-2xl animate-pulse delay-500"></div>
       </div>
 
       {/* Content */}
@@ -60,10 +65,10 @@ const Index = () => {
         <main className="container mx-auto px-4 py-8">
           {/* Hero Section */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-6xl font-black mb-4 neon-glow text-primary pulse-glow">
+            <h1 className="text-4xl md:text-6xl title-font mb-4 text-accent gold-glow">
               Spin & Win up to ₹10,000 instantly 🎰
             </h1>
-            <p className="text-xl md:text-2xl text-accent font-bold neon-glow">
+            <p className="text-xl md:text-2xl text-foreground font-semibold">
               Play for free – No risk, just rewards!
             </p>
             
@@ -71,13 +76,20 @@ const Index = () => {
           </div>
 
           {/* Main Wheel Section */}
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-12 mb-16">
-            <div className="flex-1 max-w-md">
+          <div className="flex flex-col lg:flex-row items-start justify-center gap-12 mb-16">
+            {/* Left Sidebar - Winners */}
+            <div className="hidden lg:block flex-shrink-0 w-80">
+              <WinnersLeaderboard />
+            </div>
+            
+            {/* Center Wheel */}
+            <div className="flex-shrink-0">
               <SpinWheel prizes={prizes} onPrizeWon={handlePrizeWon} />
             </div>
             
+            {/* Right Sidebar - Referral (appears after spin) */}
             {hasSpun && (
-              <div className="flex-1 max-w-md animate-float-up">
+              <div className="flex-shrink-0 w-80 animate-float-up">
                 <ReferralTracker />
               </div>
             )}

@@ -61,15 +61,15 @@ export const SpinWheel = ({ prizes, onPrizeWon }: SpinWheelProps) => {
             </div>
           </div>
           
-          {/* Center Hub */}
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-gradient-neon casino-glow flex items-center justify-center">
-            <div className="text-3xl">🎰</div>
+          {/* Luxury Center Hub */}
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-gradient-gold casino-glow flex items-center justify-center">
+            <div className="text-3xl">💎</div>
           </div>
         </div>
 
-        {/* Pointer */}
+        {/* Luxury Gold Pointer */}
         <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 z-20">
-          <div className="w-0 h-0 border-l-6 border-r-6 border-b-12 border-l-transparent border-r-transparent border-b-accent gold-glow"></div>
+          <div className="w-0 h-0 border-l-6 border-r-6 border-b-12 border-l-transparent border-r-transparent border-b-accent casino-glow"></div>
         </div>
       </div>
 

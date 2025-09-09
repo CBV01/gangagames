@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["Poppins", "Inter", "sans-serif"],
+        display: ["Montserrat", "Poppins", "sans-serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -57,11 +61,11 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Casino Theme Colors
+        // Gangagames Luxury Casino Colors
         "casino-red": "hsl(var(--casino-red))",
         "casino-green": "hsl(var(--casino-green))",
-        "casino-blue": "hsl(var(--casino-blue))",
-        "casino-orange": "hsl(var(--casino-orange))",
+        "casino-gold": "hsl(var(--casino-gold))",
+        "casino-purple": "hsl(var(--casino-purple))",
       },
       borderRadius: {
         lg: "var(--radius)",
