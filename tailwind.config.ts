@@ -57,6 +57,11 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Casino Theme Colors
+        "casino-red": "hsl(var(--casino-red))",
+        "casino-green": "hsl(var(--casino-green))",
+        "casino-blue": "hsl(var(--casino-blue))",
+        "casino-orange": "hsl(var(--casino-orange))",
       },
       borderRadius: {
         lg: "var(--radius)",
