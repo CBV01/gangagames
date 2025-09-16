@@ -40,9 +40,8 @@ export const SpinWheel = ({ prizes, onPrizeWon }: SpinWheelProps) => {
       // Since the wheel rotated, we need to find the inverse
       const normalizedAngle = (360 - finalAngle) % 360;
       
-      // Each segment is 45 degrees, starting from 0 degrees
-      // Segment 0: 0-45 degrees, Segment 1: 45-90 degrees, etc.
-      const pointedPrizeIndex = Math.floor(normalizedAngle / 45);
+      // Add 22.5 degrees to align with segment centers, then calculate index
+      const pointedPrizeIndex = Math.floor((normalizedAngle + 22.5) / 45) % prizes.length;
       
       // Get the actual prize that the pointer is pointing to
       const actualPrize = prizes[pointedPrizeIndex];

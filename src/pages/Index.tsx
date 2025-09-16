@@ -16,14 +16,14 @@ export interface Prize {
 }
 
 const prizes: Prize[] = [
-  { id: "1", name: "₹500 Bonus Credits", emoji: "💰", color: "casino-red" },
-  { id: "2", name: "₹1,000 Bonus Credits", emoji: "💎", color: "accent" },
-  { id: "3", name: "₹200 Amazon / Paytm Voucher", emoji: "🎫", color: "casino-blue" },
-  { id: "4", name: "25 Free Spins", emoji: "🎰", color: "casino-green" },
-  { id: "5", name: "₹5,000 Big Bonus", emoji: "🏆", color: "primary" },
-  { id: "6", name: "₹300 Paytm Wallet Top-up", emoji: "💳", color: "casino-orange" },
-  { id: "7", name: "Free Tournament Entry", emoji: "🎮", color: "secondary" },
-  { id: "8", name: "🎁 Mystery Reward", emoji: "🎁", color: "accent" },
+  { id: "1", name: "₹200 Amazon / Paytm Voucher", emoji: "🎫", color: "casino-blue" },
+  { id: "2", name: "Free Tournament Entry", emoji: "🎮", color: "secondary" },
+  { id: "3", name: "25 Free Spins", emoji: "🎰", color: "casino-green" },
+  { id: "4", name: "Mystery Reward", emoji: "🎁", color: "accent" },
+  { id: "5", name: "₹5000 Big Bonus", emoji: "🏆", color: "primary" },
+  { id: "6", name: "₹1000 Bonus Credits", emoji: "💎", color: "accent" },
+  { id: "7", name: "₹300 Paytm Wallet Top-up", emoji: "💳", color: "casino-orange" },
+  { id: "8", name: "₹500 Bonus Credits", emoji: "💰", color: "casino-red" },
 ];
 
 const Index = () => {
