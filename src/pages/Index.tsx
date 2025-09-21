@@ -81,12 +81,12 @@ const Index = () => {
           {/* Hero Section */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-6xl title-font mb-4 text-accent gold-glow">
-              Spin & Win up to ₹10,000
+              Spin the Wheel & Unlock Exciting Rewards worth up to ₹10,000
               <br />
-              instantly 🎰
+              🎰
             </h1>
             <p className="text-xl md:text-2xl text-foreground font-semibold">
-              Play for free – No risk, just rewards!
+              Play for fun – Unlock surprises, vouchers & exclusive gifts!
             </p>
             
             <CountdownTimer />
@@ -111,7 +111,7 @@ const Index = () => {
           <footer className="text-center text-muted-foreground border-t border-border/20 pt-8">
             <div className="mb-4">
               <p className="text-sm">
-                🔒 This is a promotional game. Terms & conditions apply. 18+ only.
+                This is a promotional game for entertainment. Rewards are in the form of vouchers, credits, or gifts. No real-money betting involved. 18+ only. Terms apply
               </p>
             </div>
             <div className="flex flex-wrap justify-center gap-6 text-sm">
