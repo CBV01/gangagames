@@ -71,7 +71,7 @@ const Index = () => {
         {refCode && (
           <div className="bg-muted/20 border border-border/50 text-foreground text-sm py-2">
             <div className="container mx-auto px-4 text-center">
-              Referred code: <span className="font-semibold text-accent">{refCode}</span> — Spin now and sign up to activate your prize!
+              संदर्भ कोड: <span className="font-semibold text-accent">{refCode}</span> — अपना इनाम सक्रिय करने के लिए अभी स्पिन करें और साइन अप करें!
             </div>
           </div>
         )}
@@ -81,12 +81,12 @@ const Index = () => {
           {/* Hero Section */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-6xl title-font mb-4 text-accent gold-glow">
-              Spin the Wheel & Unlock Exciting Rewards worth up to ₹10,000
+              व्हील घुमाएँ और ₹10,000 तक के रोमांचक पुरस्कार अनलॉक करें
               <br />
               🎰
             </h1>
             <p className="text-xl md:text-2xl text-foreground font-semibold">
-              Play for fun – Unlock surprises, vouchers & exclusive gifts!
+              मनोरंजन के लिए खेलें - आश्चर्य, वाउचर और विशेष उपहार अनलॉक करें!
             </p>
             
             <CountdownTimer />
@@ -111,13 +111,13 @@ const Index = () => {
           <footer className="text-center text-muted-foreground border-t border-border/20 pt-8">
             <div className="mb-4">
               <p className="text-sm">
-                This is a promotional game for entertainment. Rewards are in the form of vouchers, credits, or gifts. No real-money betting involved. 18+ only. Terms apply
+                यह मनोरंजन के लिए एक प्रमोशनल गेम है। इनाम वाउचर, क्रेडिट या उपहार के रूप में मिलते हैं। इसमें असली पैसे की कोई सट्टेबाजी शामिल नहीं है। केवल 18+ आयु वर्ग के लिए। नियम और शर्तें लागू।
               </p>
             </div>
             <div className="flex flex-wrap justify-center gap-6 text-sm">
-              <a href="#" className="hover:text-primary transition-colors">Terms & Conditions</a>
-              <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-primary transition-colors">Contact Us</a>
+              <a href="#" className="hover:text-primary transition-colors">नियम और शर्तें</a>
+              <a href="#" className="hover:text-primary transition-colors">गोपनीयता नीति</a>
+              <a href="#" className="hover:text-primary transition-colors">संपर्क करें</a>
             </div>
           </footer>
         </main>
