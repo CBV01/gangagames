@@ -40,7 +40,7 @@ export const CountdownTimer = () => {
   return (
     <div className="flex flex-col items-center mt-8 mb-4">
       <p className="text-accent gold-glow title-font font-bold text-lg mb-4">
-        ⚡ Offer ends soon
+        ⚡ ऑफर जल्द समाप्त होने वाला है
       </p>
 
       <div className="flex items-center gap-4 bg-card/30 backdrop-blur-md rounded-2xl p-4 md:p-6 luxury-border luxury-shadow">
@@ -49,7 +49,7 @@ export const CountdownTimer = () => {
           <div className="bg-gradient-neon text-foreground rounded-lg px-4 py-3 min-w-16 md:min-w-20">
             <div className="text-2xl md:text-4xl font-black tracking-widest">{formatNumber(timeLeft.hours)}</div>
           </div>
-          <div className="text-[10px] md:text-xs font-semibold text-muted-foreground mt-2 tracking-[0.2em]">HOURS</div>
+          <div className="text-[10px] md:text-xs font-semibold text-muted-foreground mt-2 tracking-[0.2em]">घंटे</div>
         </div>
 
         <div className="text-2xl md:text-3xl text-primary font-extrabold animate-pulse">:</div>
@@ -59,7 +59,7 @@ export const CountdownTimer = () => {
           <div className="bg-gradient-neon text-foreground rounded-lg px-4 py-3 min-w-16 md:min-w-20">
             <div className="text-2xl md:text-4xl font-black tracking-widest">{formatNumber(timeLeft.minutes)}</div>
           </div>
-          <div className="text-[10px] md:text-xs font-semibold text-muted-foreground mt-2 tracking-[0.2em]">MINUTES</div>
+          <div className="text-[10px] md:text-xs font-semibold text-muted-foreground mt-2 tracking-[0.2em]">मिनट</div>
         </div>
 
         <div className="text-2xl md:text-3xl text-primary font-extrabold animate-pulse">:</div>
@@ -69,12 +69,12 @@ export const CountdownTimer = () => {
           <div className="bg-gradient-neon text-foreground rounded-lg px-4 py-3 min-w-16 md:min-w-20">
             <div className="text-2xl md:text-4xl font-black tracking-widest">{formatNumber(timeLeft.seconds)}</div>
           </div>
-          <div className="text-[10px] md:text-xs font-semibold text-muted-foreground mt-2 tracking-[0.2em]">SECONDS</div>
+          <div className="text-[10px] md:text-xs font-semibold text-muted-foreground mt-2 tracking-[0.2em]">सेकंड</div>
         </div>
       </div>
 
       <p className="text-foreground/90 font-semibold text-sm md:text-base mt-4">
-        🔥 Spin now for a chance to win big!
+        🔥 बड़ी जीत का मौका पाने के लिए अभी स्पिन करें!
       </p>
     </div>
   );
