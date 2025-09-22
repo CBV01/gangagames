@@ -7,16 +7,8 @@ interface PrizeModalProps {
 }
 
 export const PrizeModal = ({ prize, onClose }: PrizeModalProps) => {
-  const [showReferral, setShowReferral] = useState(false);
-  const [copied, setCopied] = useState(false);
   const [showParticles, setShowParticles] = useState(true);
   const referralLink = "https://ganga1.in/#/register?invitationCode=78596367152";
-
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText(referralLink);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
 
   useEffect(() => {
     const timer = setTimeout(() => setShowParticles(false), 3000);
@@ -81,9 +73,9 @@ export const PrizeModal = ({ prize, onClose }: PrizeModalProps) => {
             </div>
             <div>
               <h2 className="text-lg md:text-xl title-font text-foreground leading-tight font-bold gold-text">
-                CONGRATULATIONS!
+                बधाई हो!
               </h2>
-              <p className="text-xs text-muted-foreground font-medium">You've won an amazing prize!</p>
+              <p className="text-xs text-muted-foreground font-medium">आपने एक शानदार इनाम जीता है!</p>
             </div>
           </div>
           
@@ -131,25 +123,21 @@ export const PrizeModal = ({ prize, onClose }: PrizeModalProps) => {
           <div className="bg-gradient-to-r from-primary/10 to-accent/10 border border-accent/30 rounded-xl p-4 backdrop-blur-sm">
             <div className="text-center">
               <p className="text-sm font-semibold text-foreground mb-2">
-                🚀 CLAIM YOUR REWARD
+                🚀 अपना इनाम प्राप्त करें
               </p>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                Complete these simple steps to unlock your <span className="font-bold text-accent">exclusive prize</span>:
+                अपने <span className="font-bold text-accent">खास इनाम</span> को पाने के लिए ये आसान कदम पूरा करें:
               </p>
             </div>
             
             <div className="mt-3 space-y-2">
               <div className="flex items-center gap-3 bg-white/5 rounded-lg p-2">
                 <div className="w-6 h-6 bg-gradient-gold text-black rounded-full flex items-center justify-center text-xs font-bold">1</div>
-                <span className="text-xs font-medium">Sign up with your referral code</span>
+                <span className="text-xs font-medium">इनाम प्राप्त करने के लिए साइन अप करें</span>
               </div>
               <div className="flex items-center gap-3 bg-white/5 rounded-lg p-2">
                 <div className="w-6 h-6 bg-gradient-gold text-black rounded-full flex items-center justify-center text-xs font-bold">2</div>
-                <span className="text-xs font-medium">Refer 5 friends to activate</span>
-              </div>
-              <div className="flex items-center gap-3 bg-white/5 rounded-lg p-2">
-                <div className="w-6 h-6 bg-gradient-gold text-black rounded-full flex items-center justify-center text-xs font-bold">3</div>
-                <span className="text-xs font-medium">Withdraw your amazing prize!</span>
+                <span className="text-xs font-medium">अपना शानदार इनाम निकालें!</span>
               </div>
             </div>
           </div>
@@ -157,52 +145,16 @@ export const PrizeModal = ({ prize, onClose }: PrizeModalProps) => {
           {/* Action Buttons */}
           <div className="space-y-3">
             <div className="grid grid-cols-1 gap-3">
-              {/* Referral link shows at the top when revealed */}
-              {showReferral && (
-                <div className="bg-background/80 rounded-xl p-3 border border-accent/20">
-                  <p className="text-xs text-muted-foreground text-center mb-2">Your unique referral link:</p>
-                  <div className="bg-white/5 rounded-lg p-2 border border-accent/10 flex items-center justify-between gap-2">
-                    <code className="text-xs font-mono break-all text-accent">
-                      {referralLink}
-                    </code>
-                    <button
-                      type="button"
-                      onClick={() => {
-                        console.log('COPY REFERRAL CODE button clicked');
-                        copyToClipboard();
-                      }}
-                      className="shrink-0 rounded-md px-3 py-1.5 text-xs font-semibold bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white transition-colors"
-                    >
-                      {copied ? '✅ Copied' : 'Copy'}
-                    </button>
-                  </div>
-                </div>
-              )}
-
-              {/* Primary CTA remains the same */}
+              {/* Primary CTA */}
               <a 
                 href={referralLink}
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="w-full rounded-xl bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary text-white py-3 px-6 text-sm font-bold shadow-lg transform hover:scale-105 transition-all duration-200 flex items-center justify-center gap-2"
               >
-                🎮 SIGN UP NOW
+                🎮 अभी साइन अप करें
                 <span className="animate-bounce">✨</span>
               </a>
-
-              {/* GET REFERRAL CODE button only shows until clicked */}
-              {!showReferral && (
-                <button 
-                  type="button"
-                  onClick={() => {
-                    console.log('GET REFERRAL CODE button clicked');
-                    setShowReferral(true);
-                  }}
-                  className="w-full rounded-xl bg-gradient-to-r from-accent/10 to-accent/5 border border-accent/30 hover:border-accent/50 text-foreground py-3 px-6 text-sm font-semibold transition-all duration-200 hover:bg-accent/20 flex items-center justify-center gap-2"
-                >
-                  🔐 GET REFERRAL CODE
-                </button>
-              )}
             </div>
           </div>
 
@@ -212,7 +164,7 @@ export const PrizeModal = ({ prize, onClose }: PrizeModalProps) => {
               href="https://gangagames.com/" 
               className="inline-block text-xs text-muted-foreground hover:text-accent transition-colors border-b border-dashed border-muted-foreground/30 hover:border-accent"
             >
-              🚀 Continue to Withdraw Bonus
+              🚀 बोनस निकासी के लिए आगे बढ़ें
             </a>
           </div>
         </div>
